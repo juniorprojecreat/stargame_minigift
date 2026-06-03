@@ -1,0 +1,12 @@
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Jangan commit file mentah pribadi.
+private/
+*.psd
+*.aep
+*.prproj
+.codex_deps/
+vendor/
+tools/

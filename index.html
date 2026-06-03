@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="referrer" content="no-referrer" />
+    <title>The Star That Couldn't See Its Own Light</title>
+    <link rel="stylesheet" href="styles.css?v=7" />
+  </head>
+  <body>
+    <div class="loader" id="loader" aria-live="polite">
+      <div class="loader-star" aria-hidden="true"></div>
+      <p>menyalakan langit kecil...</p>
+    </div>
+
+    <canvas id="skyCanvas" aria-hidden="true"></canvas>
+
+    <button class="music-toggle" id="musicToggle" type="button" aria-label="Play or pause music">
+      <span id="musicIcon">&gt;</span>
+    </button>
+
+    <main class="journey" id="journey">
+      <section class="scene scene-hero is-active" id="opening" data-scene>
+        <div class="copy copy-center">
+          <p class="line reveal">Pada suatu malam...</p>
+          <p class="line reveal delay-1">Lahir sebuah bintang kecil.</p>
+          <p class="line reveal delay-2">Bintang itu berpikir bahwa dirinya tidak cukup terang.</p>
+          <button class="primary-button reveal delay-3" id="startJourney" type="button">Mulai Perjalanan</button>
+        </div>
+      </section>
+
+      <section class="scene scene-search" id="search" data-scene>
+        <div class="scene-header">
+          <p class="eyebrow">mencari cahaya</p>
+          <p class="progress" id="progressText">0/5 bintang ditemukan</p>
+        </div>
+
+        <div class="little-star" aria-hidden="true">
+          <span></span>
+        </div>
+
+        <div class="copy search-copy">
+          <p>Karena itu, ia mulai mencari cahaya.</p>
+          <span>tekan bintang kecilnya dan baca pesan cahayamu</span>
+        </div>
+
+        <div class="star-field" id="starField" aria-label="Lima bintang untuk ditemukan"></div>
+
+        <div class="message-toast" id="messageToast" role="status" aria-live="polite"></div>
+      </section>
+
+      <section class="scene scene-discovery" id="discovery" data-scene>
+        <div class="copy copy-center">
+          <p class="line reveal">Lucunya...</p>
+          <p class="line reveal delay-1">Selama ini ia mencari cahaya ke mana-mana.</p>
+          <p class="line reveal delay-2">Padahal cahaya itu tidak pernah pergi.</p>
+          <button class="primary-button reveal delay-3" id="showLight" type="button">Tunjukkan padaku</button>
+        </div>
+      </section>
+
+      <section class="scene scene-photo" id="photoReveal" data-scene>
+        <div class="portrait-wrap" id="portraitWrap">
+          <img src="assets/Porsuppakarn.jpg" alt="Foto orang yang bersinar" />
+        </div>
+        <div class="copy photo-copy" id="photoCopy">
+          <p>Kamu menghabiskan banyak waktu mencari cahaya.</p>
+          <p>Hingga lupa...</p>
+          <p>Bahwa cahaya itu ada dalam dirimu sendiri.</p>
+          <p>Kamu adalah cahaya itu.</p>
+        </div>
+      </section>
+
+      <section class="scene scene-light" id="theLight" data-scene>
+        <div class="portrait-wrap portrait-small">
+          <img src="assets/Porsuppakarn.jpg" alt="Foto orang yang bercahaya" />
+        </div>
+        <div class="song-label">The Light - Sara Bareilles</div>
+        <div class="copy light-copy" id="lightCopy">
+          <p>Mungkin kamu tidak menyadarinya.</p>
+          <p>Mungkin kamu terlalu keras pada dirimu sendiri.</p>
+          <p>Mungkin kamu hanya melihat kekuranganmu.</p>
+          <p>Tapi aku melihatnya.</p>
+          <p>Orang-orang yang menyayangimu juga melihatnya.</p>
+          <p>Cahaya yang ada dalam dirimu.</p>
+          <p>Dan tidak ada kegelapan yang mampu menghilangkannya.</p>
+        </div>
+      </section>
+
+      <section class="scene scene-song" id="foundSong" data-scene>
+        <div class="song-card">
+          <div class="song-photo">
+            <img src="assets/776167317077595758.jpg" alt="Foto untuk lagu Found" />
+          </div>
+          <div class="song-meaning">
+            <p class="song-label">Found - POR Suppakarn</p>
+            <h1>Kalau lagu ini bisa berbicara...</h1>
+            <p>
+              Ia akan bilang bahwa tidak semua hal indah datang dengan cara yang ramai.
+            </p>
+            <p>
+              Kadang mereka hadir pelan-pelan, tanpa banyak suara, 
+              lalu perlahan mengisi ruang kosong yang bahkan tidak kita sadari ada.
+            </p>
+            <p>
+              Dan mungkin itulah arti "ditemukan".
+                Bukan tentang menemukan seseorang yang sempurna.
+            </p>
+          
+            <p>
+              Melainkan menemukan seseorang yang membuat dunia terasa sedikit lebih hangat dari sebelumnya.
+            </p>
+            <button class="primary-button" id="openLetterScene" type="button">Buka surat kecilmu disini</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="scene scene-letter" id="letterScene" data-scene>
+        <div class="mail-area">
+          <button class="envelope" id="envelope" type="button" aria-label="Buka surat">
+            <span class="flap"></span>
+            <span class="paper-peek"></span>
+          </button>
+          <p>Kamu memiliki satu pesan yang belum dibuka.</p>
+        </div>
+
+        <article class="letter" id="letter">
+          <p class="letter-date">Untuk bintang kecilku,</p>
+          <p>
+            Aku tahu ada hari-hari ketika kamu merasa redup, seolah semua hal baik
+            dalam dirimu terlalu kecil untuk terlihat.
+          </p>
+          <p>
+            Tapi dari tempatku melihatmu, kamu selalu punya cahaya yang hangat:
+            dalam caramu bertahan, caramu peduli, dan caramu tetap mencoba meski
+            tidak selalu mudah.Kamu harus percaya dan yakin bahwa smua pencapaian
+            dari usahamu tidak akan sia sia begitu saja.Kamu sudah melakukan yang terbaik. 
+          </p>
+          <p>
+            Semoga setiap kali kamu membuka halaman ini, kamu ingat bahwa kamu
+            tidak harus menjadi sempurna untuk layak disayangi. Kamu sudah lebih dari cukup.
+            Kamu berharga. Kamu adalah cahaya itu.
+          </p>
+          <p class="signature">Dengan sayang,<br />Seseorang yang melihat cahayamu</p>
+          <button class="letter-next" id="letterNext" type="button">Ingat dan ulang perjalanan ini</button>
+        </article>
+      </section>
+
+      <section class="scene scene-finale" id="finale" data-scene>
+        <div class="constellation" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="copy copy-center final-copy">
+          <p>Bahkan bintang pun tidak bisa melihat cahayanya sendiri.</p>
+          <p>Namun bukan berarti cahaya itu tidak ada.</p>
+          <button class="primary-button" id="restart" type="button">Ulangi Perjalanan</button>
+        </div>
+      </section>
+    </main>
+
+    <audio
+      id="foundAudio"
+      src="assets/found.mp3"
+      loop
+      preload="auto"
+    ></audio>
+    <audio
+      id="lightAudio"
+      src="assets/the-light.mp3"
+      loop
+      preload="auto"
+    ></audio>
+
+    <script src="script.js?v=6"></script>
+  </body>
+</html>
